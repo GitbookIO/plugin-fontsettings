@@ -4,6 +4,9 @@ module.exports = {
         assets: './assets',
         js: [
             'buttons.js'
+        ],
+        css: [
+            'style.css'
         ]
     }
 };
