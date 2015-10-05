@@ -6,7 +6,7 @@ module.exports = {
             'buttons.js'
         ],
         css: [
-            'style.css'
+            'website.css'
         ]
     }
 };
