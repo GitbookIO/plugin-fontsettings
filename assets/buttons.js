@@ -61,12 +61,10 @@ require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
     };
 
     function update() {
-        var $book = $(".book");
+        var $book = gitbook.state.$book;
 
         $(".font-settings .font-family-list li").removeClass("active");
         $(".font-settings .font-family-list li:nth-child("+(fontState.family+1)+")").addClass("active");
-
-        console.log('update font settings', fontState);
 
         $book[0].className = $book[0].className.replace(/\bfont-\S+/g, '');
         $book.addClass("font-size-"+fontState.size);
@@ -82,8 +80,8 @@ require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
         var $bookBody, $book;
 
         //Find DOM elements.
-        $book = $(".book");
-        $bookBody = $(".book-body");
+        $book = gitbook.state.$book;
+        $bookBody = $book.find(".book-body");
 
         // Instantiate font state object
         fontState = gitbook.storage.get("fontState", {

@@ -2,7 +2,7 @@
     "name": "gitbook-plugin-fontsettings",
     "description": "Font settings in GitBooks website",
     "main": "index.js",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "engines": {
         "gitbook": ">=2.4.0"
     },
