@@ -14,5 +14,11 @@
     "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/GitbookIO/plugin-fontsettings/issues"
+    },
+    "devDependencies": {
+        "less": "2.5.1"
+    },
+    "scripts": {
+        "prepublish": "mkdir -p css && lessc ./less/website.less > ./assets/website.css;"
     }
 }
