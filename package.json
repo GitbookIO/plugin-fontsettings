@@ -1,0 +1,18 @@
+{
+    "name": "gitbook-plugin-fontsettings",
+    "description": "Font settings in GitBooks website",
+    "main": "index.js",
+    "version": "0.0.0",
+    "engines": {
+        "gitbook": ">=2.4.0"
+    },
+    "homepage": "https://github.com/GitbookIO/plugin-fontsettings",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GitbookIO/plugin-fontsettings.git"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/GitbookIO/plugin-fontsettings/issues"
+    }
+}
