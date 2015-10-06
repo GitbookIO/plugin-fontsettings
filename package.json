@@ -1,17 +1,17 @@
 {
     "name": "gitbook-plugin-fontsettings",
-    "description": "Font settings in GitBooks website",
+    "description": "Fonts and colors themes settings the website for a better reading experience",
     "main": "index.js",
     "version": "1.0.0",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/GitbookIO/plugin-fontsettings",
     "engines": {
         "gitbook": ">=2.4.0"
     },
-    "homepage": "https://github.com/GitbookIO/plugin-fontsettings",
     "repository": {
         "type": "git",
         "url": "https://github.com/GitbookIO/plugin-fontsettings.git"
     },
-    "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/GitbookIO/plugin-fontsettings/issues"
     },
@@ -20,5 +20,31 @@
     },
     "scripts": {
         "prepublish": "mkdir -p css && lessc ./less/website.less > ./assets/website.css;"
+    },
+    "gitbook": {
+        "config": [
+            {
+                "key": "theme",
+                "type": "string",
+                "value": "white",
+                "description": "Default color theme",
+                "enum": ["white", "sepia", "night"]
+            },
+            {
+                "key": "family",
+                "type": "string",
+                "value": "sans",
+                "description": "Default font family",
+                "enum": ["sans", "serif"]
+            },
+            {
+                "key": "size",
+                "type": "number",
+                "value": 2,
+                "description": "Default font size",
+                "min": 1,
+                "max": 4
+            }
+        ]
     }
 }
