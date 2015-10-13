@@ -94,17 +94,8 @@ require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
     };
 
 
-    gitbook.events.bind("start", function(config) {
-        var opts = _.defaults(_.get(config, 'pluginsConfig.fontSettings', {}), {
-            // 'sepia', 'night' or 'white'
-            "theme": null,
-
-            // 'serif' or 'sans'
-            "family": 'sans',
-
-            // 1 - 4
-            "size": 2
-        });
+    gitbook.events.bind("start", function(e, config) {
+        var opts = config.fontsettings;
 
         // Create buttons in toolbar
         gitbook.toolbar.createButton({

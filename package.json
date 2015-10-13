@@ -22,29 +22,26 @@
         "prepublish": "lessc ./less/website.less > ./assets/website.css;"
     },
     "gitbook": {
-        "config": [
-            {
-                "key": "theme",
+        "properties": {
+            "theme": {
                 "type": "string",
-                "value": "white",
-                "description": "Default color theme",
+                "default": "white",
+                "title": "Default theme",
                 "enum": ["white", "sepia", "night"]
             },
-            {
-                "key": "family",
+            "family": {
                 "type": "string",
-                "value": "sans",
-                "description": "Default font family",
+                "default": "sans",
+                "title": "Default font family",
                 "enum": ["sans", "serif"]
             },
-            {
-                "key": "size",
+            "size": {
                 "type": "number",
-                "value": 2,
-                "description": "Default font size",
+                "default": 2,
+                "title": "Default font size",
                 "min": 1,
                 "max": 4
             }
-        ]
+        }
     }
 }
