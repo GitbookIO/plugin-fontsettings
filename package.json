@@ -19,7 +19,7 @@
         "less": "2.5.1"
     },
     "scripts": {
-        "prepublish": "mkdir -p css && lessc ./less/website.less > ./assets/website.css;"
+        "prepublish": "lessc ./less/website.less > ./assets/website.css;"
     },
     "gitbook": {
         "config": [
