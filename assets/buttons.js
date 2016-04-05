@@ -87,7 +87,7 @@ require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
         fontState = gitbook.storage.get("fontState", {
             size: config.size || 2,
             family: FAMILY[config.family || "sans"],
-            theme: THEMES[config.theme || "white"]
+            theme: THEMES[config.theme || "night"]
         });
 
         update();
