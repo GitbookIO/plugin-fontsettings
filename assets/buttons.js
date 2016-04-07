@@ -25,7 +25,7 @@ require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
 
         fontState.size++;
         saveFontSettings();
-    };
+    }
 
     // Decrease font size
     function reduceFontSize(e) {
@@ -34,7 +34,7 @@ require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
 
         fontState.size--;
         saveFontSettings();
-    };
+    }
 
     // Change font family
     function changeFontFamily(index, e) {
@@ -42,7 +42,7 @@ require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
 
         fontState.family = index;
         saveFontSettings();
-    };
+    }
 
     // Change type of color
     function changeColorTheme(index, e) {
@@ -58,7 +58,7 @@ require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
             $book.addClass('color-theme-'+fontState.theme);
 
         saveFontSettings();
-    };
+    }
 
     function update() {
         var $book = gitbook.state.$book;
@@ -74,7 +74,7 @@ require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
             $book[0].className = $book[0].className.replace(/\bcolor-theme-\S+/g, '');
             $book.addClass('color-theme-'+fontState.theme);
         }
-    };
+    }
 
     function init(config) {
         var $bookBody, $book;
@@ -91,7 +91,7 @@ require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
         });
 
         update();
-    };
+    }
 
 
     gitbook.events.bind('start', function(e, config) {
