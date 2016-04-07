@@ -1,4 +1,4 @@
-require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
+require(['gitbook', 'jquery'], function(gitbook, $) {
     var fontState;
 
     var THEMES = {
@@ -112,25 +112,25 @@ require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
                 [
                     {
                         text: 'Serif',
-                        onClick: _.partial(changeFontFamily, 0)
+                        onClick: function(e) { return changeFontFamily(0, e); }
                     },
                     {
                         text: 'Sans',
-                        onClick: _.partial(changeFontFamily, 1)
+                        onClick: function(e) { return changeFontFamily(1, e); }
                     }
                 ],
                 [
                     {
                         text: 'White',
-                        onClick: _.partial(changeColorTheme, 0)
+                        onClick: function(e) { return changeColorTheme(0, e); }
                     },
                     {
                         text: 'Sepia',
-                        onClick: _.partial(changeColorTheme, 1)
+                        onClick: function(e) { return changeColorTheme(1, e); }
                     },
                     {
                         text: 'Night',
-                        onClick: _.partial(changeColorTheme, 2)
+                        onClick: function(e) { return changeColorTheme(2, e); }
                     }
                 ]
             ]
