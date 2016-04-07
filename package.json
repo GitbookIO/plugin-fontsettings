@@ -1,47 +1,55 @@
 {
-    "name": "gitbook-plugin-fontsettings",
-    "description": "Fonts and colors themes settings the website for a better reading experience",
-    "main": "index.js",
-    "version": "1.0.2",
-    "license": "Apache-2.0",
-    "homepage": "https://github.com/GitbookIO/plugin-fontsettings",
-    "engines": {
-        "gitbook": ">=2.4.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/GitbookIO/plugin-fontsettings.git"
-    },
-    "bugs": {
-        "url": "https://github.com/GitbookIO/plugin-fontsettings/issues"
-    },
-    "devDependencies": {
-        "less": "2.5.1"
-    },
-    "scripts": {
-        "prepublish": "lessc ./less/website.less > ./assets/website.css;"
-    },
-    "gitbook": {
-        "properties": {
-            "theme": {
-                "type": "string",
-                "default": "white",
-                "title": "Default theme",
-                "enum": ["white", "sepia", "night"]
-            },
-            "family": {
-                "type": "string",
-                "default": "sans",
-                "title": "Default font family",
-                "enum": ["sans", "serif"]
-            },
-            "size": {
-                "type": "number",
-                "default": 2,
-                "title": "Default font size",
-                "min": 1,
-                "max": 4
-            }
-        }
+  "name": "gitbook-plugin-fontsettings",
+  "description": "Fonts and colors themes settings the website for a better reading experience",
+  "main": "index.js",
+  "version": "1.0.2",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/GitbookIO/plugin-fontsettings",
+  "engines": {
+    "gitbook": ">=2.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GitbookIO/plugin-fontsettings.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GitbookIO/plugin-fontsettings/issues"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "less": "2.5.1"
+  },
+  "scripts": {
+    "prepublish": "lessc ./less/website.less > ./assets/website.css;"
+  },
+  "gitbook": {
+    "properties": {
+      "theme": {
+        "type": "string",
+        "default": "white",
+        "title": "Default theme",
+        "enum": [
+          "white",
+          "sepia",
+          "night"
+        ]
+      },
+      "family": {
+        "type": "string",
+        "default": "sans",
+        "title": "Default font family",
+        "enum": [
+          "sans",
+          "serif"
+        ]
+      },
+      "size": {
+        "type": "number",
+        "default": 2,
+        "title": "Default font size",
+        "min": 1,
+        "max": 4
+      }
     }
+  }
 }
