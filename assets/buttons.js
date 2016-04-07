@@ -77,12 +77,6 @@ require(['gitbook', 'lodash', 'jQuery'], function(gitbook, _, $) {
     }
 
     function init(config) {
-        var $bookBody, $book;
-
-        //Find DOM elements.
-        $book = gitbook.state.$book;
-        $bookBody = $book.find('.book-body');
-
         // Instantiate font state object
         fontState = gitbook.storage.get('fontState', {
             size: config.size || 2,
