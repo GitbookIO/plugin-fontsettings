@@ -87,31 +87,57 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
     }
 
     // Change font family
-    function changeFontFamily(id, e) {
+    function changeFontFamily(configName, e) {
         if (e && e instanceof Event) {
             e.preventDefault();
         }
 
-        fontState.family = id;
+        var familyId = getFontFamilyId(configName);
+        fontState.family = familyId;
         saveFontSettings();
     }
 
-    // Change type of color
-    function changeColorTheme(id, e) {
+    // Change type of color theme
+    function changeColorTheme(configName, e) {
         if (e && e instanceof Event) {
             e.preventDefault();
         }
 
         var $book = gitbook.state.$book;
 
+        // Remove currently applied color theme
         if (fontState.theme !== 0)
             $book.removeClass('color-theme-'+fontState.theme);
 
-        fontState.theme = id;
+        // Set new color theme
+        var themeId = getThemeId(configName);
+        fontState.theme = themeId;
         if (fontState.theme !== 0)
             $book.addClass('color-theme-'+fontState.theme);
 
         saveFontSettings();
+    }
+
+    // Return the correct id for a font-family config key
+    // Default to first font-family
+    function getFontFamilyId(configName) {
+        // Search for plugin configured font family
+        var configFamily = $.grep(FAMILIES, function(family) {
+            return family.config == configName;
+        })[0];
+        // Fallback to default font family
+        return (!!configFamily)? configFamily.id : 0;
+    }
+
+    // Return the correct id for a theme config key
+    // Default to first theme
+    function getThemeId(configName) {
+        // Search for plugin configured theme
+        var configTheme = $.grep(THEMES, function(theme) {
+            return theme.config == configName;
+        })[0];
+        // Fallback to default theme
+        return (!!configTheme)? configTheme.id : 0;
     }
 
     function update() {
@@ -132,18 +158,8 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
 
     function init(config) {
         // Search for plugin configured font family
-        var configFamily = $.grep(FAMILIES, function(family) {
-            return family.config == config.family;
-        })[0];
-        // Fallback to default font family
-        configFamily = !!configFamily? configFamily.id : 0;
-
-        // Search for plugin configured theme
-        var configTheme = $.grep(THEMES, function(theme) {
-            return theme.config == config.theme;
-        })[0];
-        // Fallback to default theme
-        configTheme = !!configTheme? configTheme.id : 0;
+        var configFamily = getFontFamilyId(config.family),
+            configTheme = getThemeId(config.theme);
 
         // Instantiate font state object
         fontState = gitbook.storage.get('fontState', {
@@ -181,14 +197,14 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
                 ],
                 $.map(FAMILIES, function(family) {
                     family.onClick = function(e) {
-                        return changeFontFamily(family.id, e);
+                        return changeFontFamily(family.config, e);
                     };
 
                     return family;
                 }),
                 $.map(THEMES, function(theme) {
                     theme.onClick = function(e) {
-                        return changeColorTheme(theme.id, e);
+                        return changeColorTheme(theme.config, e);
                     };
 
                     return theme;
