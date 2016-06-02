@@ -21,7 +21,7 @@ Default configuration is:
 ```js
 {
     "pluginsConfig": {
-        "fontSettings": {
+        "fontsettings": {
             "theme": 'white', // 'sepia', 'night' or 'white',
             "family": 'sans',// 'serif' or 'sans',
             "size": 2 // 1 - 4
