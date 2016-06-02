@@ -23,8 +23,8 @@ Default configuration is:
     "pluginsConfig": {
         "fontsettings": {
             "theme": 'white', // 'sepia', 'night' or 'white',
-            "family": 'sans',// 'serif' or 'sans',
-            "size": 2 // 1 - 4
+            "family": 'sans', // 'serif' or 'sans',
+            "size": 2         // 1 - 4
         }
     }
 }
