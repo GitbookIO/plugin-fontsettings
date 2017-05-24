@@ -22,8 +22,8 @@ Default configuration is:
 {
     "pluginsConfig": {
         "fontsettings": {
-            "theme": 'white', // 'sepia', 'night' or 'white',
-            "family": 'sans', // 'serif' or 'sans',
+            "theme": "white", // "sepia", "night" or "white",
+            "family": "sans", // "serif" or "sans",
             "size": 2         // 1 - 4
         }
     }
@@ -52,8 +52,8 @@ Each font family should be described as:
 
 ```js
 var fontFamily = {
-    config: 'sans',  // name of the font family in book.json for your theme
-    text: 'Sans',    // display name of the font family in menu
+    config: "sans",  // name of the font family in book.json for your theme
+    text: "Sans",    // display name of the font family in menu
     id: 0            // the id appended to the CSS class for this font-family
 };
 ```
