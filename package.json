@@ -16,7 +16,7 @@
     "url": "https://github.com/GitbookIO/plugin-fontsettings/issues"
   },
   "devDependencies": {
-    "eslint": "^2.7.0",
+    "eslint": "^6.6.0",
     "less": "2.5.1"
   },
   "scripts": {
